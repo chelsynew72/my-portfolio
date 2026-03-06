@@ -20,7 +20,7 @@ export const projects: Project[] = [
     liveUrl: "https://fitness-coaching-platform-frontend.vercel.app",
     githubUrl: "https://github.com/chelsynew72/Fitness-Coaching-Platform",
     featured: true,
-    year: "2024",
+    year: "2026",
     tag: "Full-Stack",
   },
   {
@@ -32,45 +32,13 @@ export const projects: Project[] = [
     liveUrl: "https://flashcard-app-five-gamma.vercel.app",
     githubUrl: "https://github.com/chelsynew72/flashcard-app",
     featured: true,
-    year: "2024",
+    year: "2026",
     tag: "AI · Full-Stack",
   },
-  {
-    title: "Finance Tracker",
-    subtitle: "Personal Finance Dashboard",
-    description:
-      "Dashboard for tracking income, expenses, and budgets. Category-based expense tracking with visual charts, Supabase Auth, and real-time data updates.",
-    tech: ["React", "TypeScript", "Supabase", "Recharts", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/chelsynew72/-Personal-Finance-Tracker-",
-    featured: false,
-    year: "2024",
-    tag: "Full-Stack",
-  },
-  {
-    title: "Form Builder",
-    subtitle: "Drag & Drop Form Creator",
-    description:
-      "Visual form builder with drag-and-drop interface, multiple field types, form preview, and shareable form links.",
-    tech: ["TypeScript", "React", "Node.js"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/chelsynew72/form-builder-client",
-    featured: false,
-    year: "2024",
-    tag: "Frontend",
-  },
-  {
-    title: "E-Commerce Platform",
-    subtitle: "Full-Stack Shop",
-    description:
-      "Full e-commerce solution with product listings, cart management, order tracking, and a separate NestJS backend API.",
-    tech: ["JavaScript", "React", "NestJS", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/chelsynew72/e-commerce",
-    featured: false,
-    year: "2024",
-    tag: "Full-Stack",
-  },
+
+  
+  
+ 
 ];
 
 export const skills = {
