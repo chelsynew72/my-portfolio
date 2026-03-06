@@ -181,7 +181,7 @@ export default function Contact() {
             color: "var(--text-faint)",
           }}
         >
-          © 2025 Ameah Tem Chelsy
+          © 2026 Ameah Tem Chelsy
         </span>
         <span
           style={{

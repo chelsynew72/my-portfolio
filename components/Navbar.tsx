@@ -73,36 +73,8 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        <a
-          href="/CV_Chelsy.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            padding: "0.45rem 1.1rem",
-            border: "1px solid var(--accent)",
-            borderRadius: "4px",
-            color: "var(--accent)",
-            textDecoration: "none",
-            fontSize: "0.8rem",
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            fontFamily: "'DM Mono', monospace",
-            transition: "all 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            const el = e.currentTarget;
-            el.style.backgroundColor = "var(--accent)";
-            el.style.color = "var(--bg)";
-          }}
-          onMouseLeave={(e) => {
-            const el = e.currentTarget;
-            el.style.backgroundColor = "transparent";
-            el.style.color = "var(--accent)";
-          }}
-        >
-          Resume
-        </a>
       </div>
+        
     </nav>
   );
 }

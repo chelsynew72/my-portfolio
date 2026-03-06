@@ -1,9 +1,9 @@
 "use client";
 
 const stats = [
-  { value: "5+", label: "Projects Shipped" },
+  
   { value: "3+", label: "Years Learning" },
-  { value: "21", label: "Public Repos" },
+  
   { value: "∞", label: "Curiosity" },
 ];
 
