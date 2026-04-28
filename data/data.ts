@@ -24,6 +24,18 @@ export const projects: Project[] = [
     tag: "Full-Stack",
   },
   {
+  title: "WebCrawler UI",
+  subtitle: "Site Crawling & Data Extraction Tool",
+  description:
+    "A full-stack web crawler that lets you input any URL and recursively crawl pages, map links, and extract structured data — all surfaced through a clean, real-time dashboard interface.",
+  tag: "Full-Stack",
+  year: "2026",
+  tech: ["React", "Node.js", "TypeScript", "REST API", "Cloudflare Pages"],
+  githubUrl: "https://github.com/chelsynew72/crawler-website",
+  liveUrl: "https://crawler-website-frontend.pages.dev/",
+  featured: true,
+},
+  {
     title: "FlashcardApp",
     subtitle: "AI Spaced Repetition System",
     description:
