@@ -1,11 +1,12 @@
 "use client";
 
 const stats = [
-  
-  { value: "3+", label: "Years Learning" },
-  
+  { value: "4+", label: "Projects Shipped" },
+  { value: "10+", label: "Technologies" },
+  { value: "2yrs", label: "Training" },
   { value: "∞", label: "Curiosity" },
 ];
+
 
 export default function About() {
   return (
@@ -65,8 +66,10 @@ export default function About() {
           >
             I&apos;m <span style={{ color: "var(--text)" }}>Ameah Tem Chelsy</span>, a self-driven
             full-stack developer based in{" "}
-            <span style={{ color: "var(--text)" }}>Yaoundé, Cameroon</span>. I build real-world
-            web applications using modern JavaScript frameworks and backend technologies.
+            <span style={{ color: "var(--text)" }}>Yaoundé, Cameroon</span>. Trained at{" "}
+            <span style={{ color: "var(--text)" }}>Rebase Code Camp</span>, an
+            international-standard coding institution, where I spent two years building
+            real-world applications across the full stack.
           </p>
           <p
             style={{
@@ -78,8 +81,9 @@ export default function About() {
           >
             My focus is on writing clean, maintainable code and building products that
             actually work. I care deeply about{" "}
-            <span style={{ color: "var(--text)" }}>architecture, developer experience</span>, and
-            shipping things that users find valuable.
+            <span style={{ color: "var(--text)" }}>architecture, system design</span>, and
+            shipping things that users find genuinely valuable — from real-time platforms
+            to AI-powered learning tools.
           </p>
           <p
             style={{
@@ -88,9 +92,15 @@ export default function About() {
               lineHeight: 1.85,
             }}
           >
-            I&apos;m actively seeking{" "}
-            <span style={{ color: "var(--accent)" }}>remote full-stack roles</span> where I
-            can contribute to meaningful products and grow with a great team.
+            I work across the full stack with{" "}
+            <span style={{ color: "var(--text)" }}>
+              React, Next.js, NestJS, Vue 3, Flutter, and TypeScript
+            </span>
+            , and I&apos;m fluent in both{" "}
+            <span style={{ color: "var(--text)" }}>English and French</span>. I&apos;m
+            actively seeking{" "}
+            <span style={{ color: "var(--accent)" }}>remote full-stack roles</span> where
+            I can contribute to meaningful products and grow with a great team.
           </p>
 
           {/* Links */}
@@ -129,7 +139,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — stats */}
+        {/* Right — stats + badge */}
         <div>
           <div
             style={{
@@ -172,6 +182,46 @@ export default function About() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Languages badge */}
+          <div
+            style={{
+              marginTop: "1rem",
+              padding: "1rem 1.5rem",
+              border: "1px solid var(--border)",
+              borderRadius: "6px",
+              backgroundColor: "var(--bg-card)",
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "0.75rem",
+                color: "var(--text-faint)",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              Languages
+            </span>
+            <div style={{ display: "flex", gap: "0.75rem" }}>
+              {["English — Fluent", "French — Fluent"].map((lang) => (
+                <span
+                  key={lang}
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.75rem",
+                    color: "var(--text-muted)",
+                  }}
+                >
+                  {lang}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Open to work badge */}

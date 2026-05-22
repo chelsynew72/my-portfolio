@@ -132,7 +132,7 @@ export default function Contact() {
             {[
               { label: "GitHub", href: "https://github.com/chelsynew72" },
               { label: "dev.to", href: "https://dev.to/chelsy" },
-              { label: "LinkedIn", href: "#" },
+             
             ].map((link) => (
               <a
                 key={link.label}
