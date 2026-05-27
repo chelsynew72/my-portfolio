@@ -176,6 +176,27 @@ export default function Hero() {
         >
           Get In Touch
         </a>
+        <a
+          href="/Chelsy_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            padding: "0.85rem 2rem",
+            border: "1px solid var(--border)",
+            color: "var(--text)",
+            textDecoration: "none",
+            borderRadius: "4px",
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "0.82rem",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            transition: "border-color 0.2s",
+          }}
+          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--text-muted)")}
+          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
+        >
+          View CV
+        </a>
       </div>
 
       {/* Scroll hint */}

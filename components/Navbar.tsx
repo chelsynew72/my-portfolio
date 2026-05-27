@@ -6,6 +6,7 @@ const links = [
   { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
+  { label: "CV", href: "/Chelsy_CV.pdf" },
 ];
 
 export default function Navbar() {
