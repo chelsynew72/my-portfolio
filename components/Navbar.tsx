@@ -6,8 +6,10 @@ const links = [
   { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
+  { label: "Certification", href: "/certificate-vxcbagkhg88x-1777039216.pdf" },
   { label: "CV", href: "/Chelsy_CV.pdf" },
 ];
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

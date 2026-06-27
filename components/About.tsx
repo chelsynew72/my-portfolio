@@ -56,6 +56,7 @@ export default function About() {
       >
         {/* Left — bio */}
         <div>
+
           <p
             style={{
               fontSize: "1rem",
@@ -141,6 +142,75 @@ export default function About() {
 
         {/* Right — stats + badge */}
         <div>
+          {/* Certification */}
+          <div
+            style={{
+              marginBottom: "1.5rem",
+              padding: "1.25rem 1.5rem",
+              border: "1px solid var(--border)",
+              borderRadius: "6px",
+              backgroundColor: "var(--bg-card)",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "0.75rem",
+                color: "var(--accent)",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Certification
+            </div>
+            <h3
+              style={{
+                fontFamily: "'DM Serif Display', serif",
+                fontSize: "1.35rem",
+                color: "var(--text)",
+                letterSpacing: "-0.01em",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Claude-code
+            </h3>
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "var(--text-muted)",
+                lineHeight: 1.7,
+                marginBottom: "1.25rem",
+              }}
+            >
+              Verified completion proof (PDF).
+            </p>
+            <a
+              href="/certificate-vxcbagkhg88x-1777039216.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.55rem",
+                padding: "0.85rem 1.1rem",
+                border: "1px solid var(--accent-dim)",
+                borderRadius: "4px",
+                color: "var(--accent)",
+                textDecoration: "none",
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "0.82rem",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.85")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
+            >
+              View certification <span aria-hidden>↗</span>
+            </a>
+          </div>
+
           <div
             style={{
               display: "grid",
