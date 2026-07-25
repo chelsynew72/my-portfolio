@@ -19,9 +19,10 @@ export default function Skills() {
         backgroundColor: "var(--bg-subtle)",
         borderTop: "1px solid var(--border)",
         borderBottom: "1px solid var(--border)",
+        width: "100%",
       }}
     >
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}>
         {/* Section header */}
         <div style={{ marginBottom: "4rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1rem" }}>

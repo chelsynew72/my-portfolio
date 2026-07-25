@@ -16,24 +16,23 @@
   --accent-dim: #a07c35;
   --accent-glow: rgba(212, 168, 83, 0.12);
   --nav-h: 64px;
+  --px: 2rem;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Instrument Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 /* Grain overlay */
@@ -47,12 +46,9 @@ body::before {
   opacity: 0.35;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-/* Selection */
 ::selection { background: var(--accent); color: var(--bg); }
 
 /* ── Animations ─────────────────────────────────────────── */
@@ -66,7 +62,7 @@ body::before {
 }
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50%       { opacity: 0; }
 }
 @keyframes pulse-dot {
   0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
@@ -77,8 +73,8 @@ body::before {
   100% { background-position:  200% center; }
 }
 
-.animate-fade-up  { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-fade-in  { animation: fadeIn 0.6s ease both; }
+.animate-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in { animation: fadeIn 0.6s ease both; }
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
@@ -94,19 +90,28 @@ body::before {
 .nav-mobile  { display: none; }
 .hamburger   { display: none; }
 
-/* ── Layout helpers ─────────────────────────────────────── */
+/* ── Section layout ─────────────────────────────────────── */
+/* Every section gets horizontal padding from here — NOT inline */
+.section-pad {
+  padding: 8rem var(--px);
+  width: 100%;
+}
+
 .section-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
 }
 
 /* ── Hero ───────────────────────────────────────────────── */
-/* The section is full-viewport; flex centers content.
-   We add top padding so content never hides behind the nav. */
 .hero-section {
   padding-top: calc(var(--nav-h) + 4rem) !important;
   padding-bottom: 4rem;
+  padding-left: var(--px);
+  padding-right: var(--px);
+  width: 100%;
+  /* clip the decorative glow blob */
+  overflow: hidden;
 }
 
 /* ── About grid ─────────────────────────────────────────── */
@@ -117,7 +122,7 @@ body::before {
   align-items: start;
 }
 
-/* ── Skills "currently learning" banner ─────────────────── */
+/* ── Skills learning banner ─────────────────────────────── */
 .learning-banner {
   display: flex;
   align-items: center;
@@ -125,11 +130,8 @@ body::before {
   flex-wrap: wrap;
 }
 
-/* ── Section padding ────────────────────────────────────── */
-.section-pad { padding: 8rem 2rem; }
-
 /* ══════════════════════════════════════════════════════════
-   RESPONSIVE — tablet  ≤ 900px
+   TABLET  ≤ 900px
 ══════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .about-grid {
@@ -139,9 +141,11 @@ body::before {
 }
 
 /* ══════════════════════════════════════════════════════════
-   RESPONSIVE — mobile  ≤ 768px
+   MOBILE  ≤ 768px
 ══════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
+  :root { --px: 1.25rem; }
+
   /* Navbar */
   .nav-desktop { display: none !important; }
   .hamburger   { display: flex !important; }
@@ -153,33 +157,38 @@ body::before {
     top: var(--nav-h);
     left: 0;
     right: 0;
+    width: 100%;
     background: rgba(12,12,11,0.97);
     backdrop-filter: blur(16px);
-    padding: 2rem;
+    padding: 2rem var(--px);
     gap: 1.5rem;
     border-bottom: 1px solid var(--border);
     z-index: 99;
   }
   .nav-mobile.open { display: flex; }
 
-  /* Section padding */
-  .section-pad { padding: 5rem 1.25rem; }
-
-  /* Hero */
-  .hero-section { padding-top: calc(var(--nav-h) + 2rem) !important; }
-
-  /* Hero scroll hint — hide on mobile to avoid clutter */
-  .scroll-hint { display: none !important; }
-
-  /* Hero tagline — shorten on very small screens */
-  .hero-tagline { font-size: 0.72rem !important; }
-
-  /* Projects featured card inner layout */
-  .project-card-inner {
-    flex-direction: column !important;
+  /* Sections */
+  .section-pad { padding: 5rem var(--px); }
+  .hero-section {
+    padding-top: calc(var(--nav-h) + 2rem) !important;
+    padding-left: var(--px) !important;
+    padding-right: var(--px) !important;
   }
 
-  /* Skills learning banner */
+  /* Hide scroll hint */
+  .scroll-hint { display: none !important; }
+
+  /* Hero tagline wraps instead of overflowing */
+  .hero-tagline {
+    font-size: 0.7rem !important;
+    white-space: normal !important;
+    word-break: break-word;
+  }
+
+  /* Project card stacks */
+  .project-card-inner { flex-direction: column !important; }
+
+  /* Skills banner */
   .learning-banner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
   /* Contact buttons */
@@ -188,9 +197,7 @@ body::before {
     align-items: stretch !important;
   }
   .contact-btns a,
-  .contact-btns button {
-    text-align: center;
-  }
+  .contact-btns button { text-align: center; width: 100%; }
 
   /* Footer */
   .footer-inner {
@@ -201,9 +208,9 @@ body::before {
 }
 
 /* ══════════════════════════════════════════════════════════
-   RESPONSIVE — small mobile  ≤ 480px
+   SMALL MOBILE  ≤ 480px
 ══════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .section-pad { padding: 4rem 1rem; }
-  .section-inner { padding: 0 1rem; }
+  :root { --px: 1rem; }
+  .section-pad { padding: 4rem var(--px); }
 }

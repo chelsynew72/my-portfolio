@@ -42,24 +42,25 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        padding: "0 2rem",
         maxWidth: "1100px",
         margin: "0 auto",
         position: "relative",
       }}
     >
+      {/* Ambient glow — contained, won't cause overflow */}
       <div
         style={{
           position: "absolute",
-          top: "20%", left: "-10%",
-          width: "500px", height: "500px",
+          top: "20%", left: "0",
+          width: "40%", height: "500px",
           background: "radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 70%)",
           pointerEvents: "none",
+          zIndex: 0,
         }}
       />
 
       {/* Tagline */}
-      <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2rem" }}>
+      <div className="animate-fade-up delay-1" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2rem", position: "relative", zIndex: 1 }}>
         <span style={{ width: "32px", height: "1px", backgroundColor: "var(--accent)", display: "inline-block", flexShrink: 0 }} />
         <span
           className="hero-tagline"

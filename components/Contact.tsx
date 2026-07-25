@@ -20,6 +20,7 @@ export default function Contact() {
         style={{
           backgroundColor: "var(--bg-subtle)",
           borderTop: "1px solid var(--border)",
+          width: "100%",
         }}
       >
         <div
@@ -166,9 +167,10 @@ export default function Contact() {
       {/* Footer */}
       <footer
         style={{
-          padding: "1.75rem 2rem",
+          padding: "1.75rem var(--px, 2rem)",
           borderTop: "1px solid var(--border)",
           backgroundColor: "var(--bg)",
+          width: "100%",
         }}
       >
         <div

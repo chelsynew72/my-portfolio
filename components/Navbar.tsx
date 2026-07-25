@@ -90,7 +90,7 @@ export default function Navbar() {
         position: "fixed",
         top: 0, left: 0, right: 0,
         zIndex: 100,
-        padding: "0 2rem",
+        padding: "0 var(--px, 2rem)",
         height: "var(--nav-h)",
         display: "flex",
         alignItems: "center",

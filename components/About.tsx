@@ -9,7 +9,7 @@ export default function About() {
     <section
       id="about"
       className="section-pad"
-      style={{ maxWidth: "1100px", margin: "0 auto" }}
+      style={{ maxWidth: "1100px", margin: "0 auto", width: "100%" }}
     >
       {/* Section header */}
       <div style={{ marginBottom: "4rem" }}>
