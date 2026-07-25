@@ -1,5 +1,6 @@
 "use client";
 import { skills } from "../data/data";
+import { useLang } from "@/context/LangContext";
 
 const categoryIcons: Record<string, string> = {
   Frontend: "◈",
@@ -9,11 +10,12 @@ const categoryIcons: Record<string, string> = {
 };
 
 export default function Skills() { 
+  const { tr } = useLang();
   return (
     <section
       id="skills"
+      className="section-pad"
       style={{
-        padding: "8rem 2rem",
         backgroundColor: "var(--bg-subtle)",
         borderTop: "1px solid var(--border)",
         borderBottom: "1px solid var(--border)",
@@ -32,7 +34,7 @@ export default function Skills() {
                 textTransform: "uppercase",
               }}
             >
-              03. Skills
+            {tr.skills.label}
             </span>
             <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }} />
           </div>
@@ -44,7 +46,7 @@ export default function Skills() {
               letterSpacing: "-0.02em",
             }}
           >
-            Technical Stack
+            {tr.skills.heading}
           </h2>
         </div>
 
@@ -137,15 +139,13 @@ export default function Skills() {
 
         {/* Currently learning banner */}
         <div
+          className="learning-banner"
           style={{
             marginTop: "2rem",
             padding: "1.25rem 1.75rem",
             border: "1px solid var(--accent-dim)",
             borderRadius: "6px",
             backgroundColor: "var(--accent-glow)",
-            display: "flex",
-            alignItems: "center",
-            gap: "1rem",
           }}
         >
           <span style={{ color: "var(--accent)", fontSize: "1rem" }}>⟳</span>
@@ -157,10 +157,10 @@ export default function Skills() {
               letterSpacing: "0.04em",
             }}
           >
-            Currently Learning:
+            {tr.skills.learning_label}
           </span>
           <span style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
-            Laravel (PHP) · GraphQL · CI/CD with GitHub Actions
+            {tr.skills.learning_items}
           </span>
         </div>
       </div>

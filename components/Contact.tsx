@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
+import { useLang } from "@/context/LangContext";
 
 export default function Contact() {
+  const { tr } = useLang();
   const [copied, setCopied] = useState(false);
 
   function copyEmail() {
@@ -14,8 +16,8 @@ export default function Contact() {
     <>
       <section
         id="contact"
+        className="section-pad"
         style={{
-          padding: "8rem 2rem 6rem",
           backgroundColor: "var(--bg-subtle)",
           borderTop: "1px solid var(--border)",
         }}
@@ -39,7 +41,7 @@ export default function Contact() {
               marginBottom: "1.5rem",
             }}
           >
-            05. Contact
+            {tr.contact.label}
           </span>
 
           <h2
@@ -52,9 +54,9 @@ export default function Contact() {
               marginBottom: "1.5rem",
             }}
           >
-            Let&apos;s work
+            {tr.contact.heading_1}
             <br />
-            <span style={{ color: "var(--text-muted)", fontStyle: "italic" }}>together.</span>
+            <span style={{ color: "var(--text-muted)", fontStyle: "italic" }}>{tr.contact.heading_2}</span>
           </h2>
 
           <p
@@ -67,12 +69,12 @@ export default function Contact() {
               margin: "0 auto 3rem",
             }}
           >
-            I&apos;m currently open to remote full-stack roles. If you have an opportunity
-            or just want to connect — my inbox is open.
+            {tr.contact.body}
           </p>
 
           {/* Email CTA */}
           <div
+            className="contact-btns"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -98,7 +100,7 @@ export default function Contact() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.85")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
             >
-              Send me an email
+              {tr.contact.send}
             </a>
             <button
               onClick={copyEmail}
@@ -117,7 +119,7 @@ export default function Contact() {
                 transition: "all 0.2s",
               }}
             >
-              {copied ? "✓ Copied!" : "Copy email"}
+              {copied ? tr.contact.copied : tr.contact.copy}
             </button>
           </div>
 
@@ -166,14 +168,19 @@ export default function Contact() {
         style={{
           padding: "1.75rem 2rem",
           borderTop: "1px solid var(--border)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "1rem",
           backgroundColor: "var(--bg)",
         }}
       >
+        <div
+          className="footer-inner"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "1rem",
+          }}
+        >
         <span
           style={{
             fontFamily: "'DM Mono', monospace",
@@ -181,7 +188,7 @@ export default function Contact() {
             color: "var(--text-faint)",
           }}
         >
-          © 2026 Ameah Tem Chelsy
+          © 2025 Ameah Tem Chelsy
         </span>
         <span
           style={{
@@ -190,8 +197,9 @@ export default function Contact() {
             color: "var(--text-faint)",
           }}
         >
-          Built with Next.js · Deployed on Vercel
+          {tr.footer.built}
         </span>
+        </div>
       </footer>
     </>
   );

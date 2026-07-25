@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { projects } from "../data/data";
+import { useLang } from "@/context/LangContext";
 
 function ExternalIcon() {
   return (
@@ -21,6 +22,7 @@ function GithubIcon() {
 }
 
 export default function Projects() {
+  const { tr } = useLang();
   const [hovered, setHovered] = useState<number | null>(null);
 
   const featured = projects.filter((p) => p.featured);
@@ -29,8 +31,8 @@ export default function Projects() {
   return (
     <section
       id="work"
+      className="section-pad"
       style={{
-        padding: "8rem 2rem",
         maxWidth: "1100px",
         margin: "0 auto",
       }}
@@ -47,7 +49,7 @@ export default function Projects() {
               textTransform: "uppercase",
             }}
           >
-            02. Work
+            {tr.projects.label}
           </span>
           <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }} />
         </div>
@@ -59,7 +61,7 @@ export default function Projects() {
             letterSpacing: "-0.02em",
           }}
         >
-          Selected Projects
+          {tr.projects.heading}
         </h2>
       </div>
 
@@ -97,7 +99,7 @@ export default function Projects() {
               }}
             />
 
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
+            <div className="project-card-inner" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
               <div style={{ flex: 1, minWidth: "280px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.5rem" }}>
                   <span
@@ -169,7 +171,7 @@ export default function Projects() {
                     onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text)")}
                     onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text-muted)")}
                   >
-                    <GithubIcon /> Code
+                    <GithubIcon /> {tr.projects.code}
                   </a>
                 )}
                 {project.liveUrl !== "#" && (
@@ -181,7 +183,7 @@ export default function Projects() {
                     onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.75")}
                     onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
                   >
-                    <ExternalIcon /> Live
+                    <ExternalIcon /> {tr.projects.live}
                   </a>
                 )}
               </div>
@@ -193,7 +195,7 @@ export default function Projects() {
       {/* Other projects grid */}
       <div>
         <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "var(--text-faint)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
-          Other Projects
+          {tr.projects.other}
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem" }}>
           {rest.map((project) => (
